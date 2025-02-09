@@ -24,11 +24,7 @@ class Solution:
         if start_row == m and start_col == n:
             return 1
 
-        memo[grid] = self.uniquePathsWithObstaclesHelper(obstacleGrid, start_row + 1, start_col, m, n,
-                                                         memo) + self.uniquePathsWithObstaclesHelper(obstacleGrid,
-                                                                                                     start_row,
-                                                                                                     start_col + 1, m,
-                                                                                                     n, memo)
+        memo[grid] = self.uniquePathsWithObstaclesHelper(obstacleGrid, start_row + 1, start_col, m, n,memo) + self.uniquePathsWithObstaclesHelper(obstacleGrid,start_row,start_col + 1, m,n, memo)
 
         return memo[grid]
 
