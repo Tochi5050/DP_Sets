@@ -2,7 +2,7 @@ from typing import List
 from functools import lru_cache
 
 
-class Solution: # print(Solution.maxProfit(2, [6, 5, 3, 2, 0, 3]))
+class Solution: # print(Solution.maxProfit(2, [3,2,6,5,0,3]))
     def maxProfit(k: int, prices: List[int]) -> int:
         @lru_cache(None)
         def dp(i, transactions_remaining, holding):
@@ -26,13 +26,13 @@ class Solution: # print(Solution.maxProfit(2, [6, 5, 3, 2, 0, 3]))
                 do_something = -prices[i] + dp(i + 1, transactions_remaining, 1)
 
             # Recurrence relation
-            print("do_nothing=", do_nothing, "do_something", do_something, "max_do_nothing->>", max(do_nothing, do_something), "i->>>", i)
+            print("do_nothing=", do_nothing, "do_something", do_something, "max->>", max(do_nothing, do_something), "i->>>", i)
             return max(do_nothing, do_something)
 
         return dp(0, k, 0)
 
 # print(Solution.maxProfit(2, [2,4,1]))
 # print(Solution.maxProfit(2, [6, 5, 3, 2, 0, 3]))
-print(Solution.maxProfit(4, [3,2,6,5,0,3]))
+print(Solution.maxProfit(2, [3,2,6,5,0,3]))
 
 
